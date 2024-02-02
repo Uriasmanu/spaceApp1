@@ -4,7 +4,6 @@ import {styled} from "styled-components"
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
-import './App.css'
 import EstilosGlobais from "./componentes/estilosGlobais"
 
 function App() {
