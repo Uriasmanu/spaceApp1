@@ -3,6 +3,8 @@ import { styled } from "styled-components"
 import EstilosGlobais from "./componentes/estilosGlobais"
 import Cabecalho from "./componentes/header"
 
+
+
 function App() {
 
 
@@ -10,6 +12,7 @@ function App() {
     <FundoGradient>
       <EstilosGlobais />
       <Cabecalho/>
+    
     </FundoGradient>
   )
 }
