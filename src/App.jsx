@@ -5,6 +5,7 @@ import Cabecalho from "./componentes/header"
 import BarraLateral from "./componentes/BarraLateral"
 import Banner from "./componentes/Banner"
 import bannerBackground from './assets/assets/banner.png'
+import Galeria from "./componentes/galeria"
 
 const AppContainer = styled.div`
   width: 1440px;
@@ -17,6 +18,12 @@ const Main = styled.main`
   gap: 24px;
 `
 
+const Conteudo = styled.section`
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+`
+
 function App() {
   return (
     <FundoGradient>
@@ -25,10 +32,13 @@ function App() {
         <Cabecalho />
         <Main>
           <BarraLateral />
+          <Conteudo>
           <Banner
             texto="A galeria mais completa de fotos do espaço!"
             backgroundImage={bannerBackground}
           />
+          <Galeria/>
+          </Conteudo>
         </Main>
       </AppContainer>
     </FundoGradient>
