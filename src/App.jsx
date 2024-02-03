@@ -6,19 +6,31 @@ import BarraLateral from "./componentes/BarraLateral"
 import Banner from "./componentes/Banner"
 import bannerBackground from './assets/assets/banner.png'
 
+const AppContainer = styled.div`
+  width: 1440px;
+  margin: 0 auto;
+  max-width: 100%;
+`
+
+const Main = styled.main`
+  display: flex;
+  gap: 24px;
+`
 
 function App() {
-
-
   return (
     <FundoGradient>
       <EstilosGlobais />
-      <Cabecalho/>
-      <BarraLateral/>
-      <Banner
-        texto="A galeria mais completa de fotos do espaço!"
-        backgroundImage={bannerBackground}
-      />
+      <AppContainer>
+        <Cabecalho />
+        <Main>
+          <BarraLateral />
+          <Banner
+            texto="A galeria mais completa de fotos do espaço!"
+            backgroundImage={bannerBackground}
+          />
+        </Main>
+      </AppContainer>
     </FundoGradient>
   )
 }
