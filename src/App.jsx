@@ -2,7 +2,9 @@ import { styled } from "styled-components"
 
 import EstilosGlobais from "./componentes/estilosGlobais"
 import Cabecalho from "./componentes/header"
-
+import BarraLateral from "./componentes/BarraLateral"
+import Banner from "./componentes/Banner"
+import bannerBackground from './assets/assets/banner.png'
 
 
 function App() {
@@ -12,7 +14,11 @@ function App() {
     <FundoGradient>
       <EstilosGlobais />
       <Cabecalho/>
-    
+      <BarraLateral/>
+      <Banner
+        texto="A galeria mais completa de fotos do espaço!"
+        backgroundImage={bannerBackground}
+      />
     </FundoGradient>
   )
 }
