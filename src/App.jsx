@@ -9,6 +9,7 @@ import Galeria from "./componentes/galeria"
 import { useState } from "react"
 
 import foto from './fotos.json'
+import ModalZoom from "./componentes/ModalZoom"
 
 
 
@@ -32,6 +33,7 @@ const Conteudo = styled.section`
 const App = () => {
 
   const [fotoDaGaleria, setFotoDaGaleria] = useState(foto)
+  const [fotoSelecionada, setFotoSelecionada] = useState(null)
 
   return (
     <FundoGradient>
@@ -45,10 +47,16 @@ const App = () => {
               texto="A galeria mais completa de fotos do espaço!"
               backgroundImage={bannerBackground}
             />
-            <Galeria fotos={fotoDaGaleria} />
+            <Galeria 
+            aoFotoSelecionada={foto => setFotoSelecionada(foto)}
+            fotos={fotoDaGaleria} />
           </Conteudo>
         </Main>
       </AppContainer>
+      <ModalZoom
+      foto={fotoSelecionada}
+      aoFechar={() => setFotoSelecionada(null)}
+      />
     </FundoGradient>
   )
 }

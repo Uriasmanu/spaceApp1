@@ -38,14 +38,9 @@ const Rodape = styled.footer`
 `
 import heart from '../../../assets/icones/favorito.png'
 import expand from '../../../assets/icones/expandir.png'
-import { useState } from "react"
 
-const Imagen = ({ foto}) => {
-    const [expandida, setExpandida] = useState(false);
+const Imagen = ({ foto, expandida = false, aoZoomSolicitado }) => {
 
-  const toggleExpansao = () => {
-    setExpandida(!expandida);
-  };
     return (
         <Figure $expandida={expandida} id={`foto-${foto.id}`} >
             <img src={foto.path} alt={foto.alt} />
@@ -57,9 +52,9 @@ const Imagen = ({ foto}) => {
                         <img src={heart} alt="Icone de coracao" />
                     </BotaoIcone>
                     
-                        <BotaoIcone onClick={toggleExpansao}>
-                            <img src={expand} alt="Icone de expandir" />
-                        </BotaoIcone>
+                    {!expandida && <BotaoIcone aria-hidden={expandida} onClick={() => aoZoomSolicitado(foto)}>
+                    <img src={expand} alt="Icone de expandir" />
+                </BotaoIcone>}
                
                 </Rodape>
             </figcaption>
