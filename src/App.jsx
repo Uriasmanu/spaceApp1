@@ -5,7 +5,10 @@ import Cabecalho from "./componentes/header"
 import BarraLateral from "./componentes/BarraLateral"
 import Banner from "./componentes/Banner"
 import bannerBackground from './assets/assets/banner.png'
+import Galeria from "./componentes/galeria"
+import { useState } from "react"
 
+import foto from './fotos.json'
 
 
 
@@ -27,6 +30,9 @@ const Conteudo = styled.section`
 `
 
 const App = () => {
+
+  const [fotoDaGaleria, setFotoDaGaleria] = useState(foto)
+
   return (
     <FundoGradient>
       <EstilosGlobais />
@@ -35,11 +41,11 @@ const App = () => {
         <Main>
           <BarraLateral />
           <Conteudo>
-          <Banner
-            texto="A galeria mais completa de fotos do espaço!"
-            backgroundImage={bannerBackground}
-          />
-       
+            <Banner
+              texto="A galeria mais completa de fotos do espaço!"
+              backgroundImage={bannerBackground}
+            />
+            <Galeria fotos={fotoDaGaleria} />
           </Conteudo>
         </Main>
       </AppContainer>

@@ -1,23 +1,11 @@
+import { styled } from "styled-components"
+
 import Titulo from "../Titulo"
-import Populares from "./Populares"
 import Tags from "./Tags"
+import Populares from "./Populares"
+import Imagen from "./Imagem"
 
-const Galeria = () => {
-    return (
-        <>
-            <Tags />
-            <GaleriaContainer>
-                <SecaoFluida>
-                <Titulo>Navegue pela galeria</Titulo>
-                <ImagensContainer>
 
-                </ImagensContainer>
-                </SecaoFluida>
-                <Populares/>
-            </GaleriaContainer>
-        </>
-    )
-}
 
 const GaleriaContainer = styled.div`
     display: flex;
@@ -34,5 +22,27 @@ const ImagensContainer = styled.section`
     flex-wrap: wrap;
     gap: 24px;
 `
+
+const Galeria = ({ fotos = [] }) => {
+    return (
+        <>
+            <Tags />
+            <GaleriaContainer>
+                <SecaoFluida>
+                    <Titulo>Navegue pela galeria</Titulo>
+                    <ImagensContainer>
+                    {fotos.map(foto => <Imagen 
+                            key={foto.id} 
+                            foto={foto} />)
+                        }
+                    </ImagensContainer>
+                </SecaoFluida>
+                <Populares />
+            </GaleriaContainer>
+        </>
+    )
+}
+
+
 
 export default Galeria
