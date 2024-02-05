@@ -5,7 +5,8 @@ import Cabecalho from "./componentes/header"
 import BarraLateral from "./componentes/BarraLateral"
 import Banner from "./componentes/Banner"
 import bannerBackground from './assets/assets/banner.png'
-import Galeria from "./componentes/galeria"
+
+
 
 
 const AppContainer = styled.div`
@@ -38,7 +39,7 @@ const App = () => {
             texto="A galeria mais completa de fotos do espaço!"
             backgroundImage={bannerBackground}
           />
-          <Galeria/>
+       
           </Conteudo>
         </Main>
       </AppContainer>
