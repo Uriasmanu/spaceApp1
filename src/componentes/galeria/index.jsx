@@ -1,7 +1,12 @@
+import Titulo from "../Titulo"
+import Tags from "./Tags"
+
 const Galeria = () => {
-    return(
-        <div className="container galeria">galeria</div>
+    return (
+        <>
+        <Tags/>
+        <Titulo>Navegue pela galeria</Titulo>
+        </>
     )
 }
-
-export  default Galeria;
+export default Galeria

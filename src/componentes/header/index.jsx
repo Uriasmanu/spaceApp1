@@ -1,24 +1,22 @@
 import { styled } from "styled-components"
-import logo from '../../assets/logo.png'
-import CampoTexto from "../campoTexto"
+import CampoTexto from "../CampoTexto"
 
-const Cabecalho = () => {
-    return (
-        <HeaderEstilizado>
-            <img src={logo} />
-            <CampoTexto/>
-        </HeaderEstilizado>
-    )
-}
+import logo from '../../assets/logo.png'
 
 const HeaderEstilizado = styled.header`
     padding: 60px 0;
     display: flex;
     justify-content: space-between;
-
-    img{
+    img {
         max-width: 212px;
     }
 `
+
+const Cabecalho = () => {
+    return (<HeaderEstilizado>
+        <img src={logo} alt="" />
+        <CampoTexto />
+    </HeaderEstilizado>)
+}
 
 export default Cabecalho

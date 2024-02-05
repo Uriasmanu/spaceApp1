@@ -7,6 +7,7 @@ import Banner from "./componentes/Banner"
 import bannerBackground from './assets/assets/banner.png'
 import Galeria from "./componentes/galeria"
 
+
 const AppContainer = styled.div`
   width: 1440px;
   margin: 0 auto;
@@ -24,7 +25,7 @@ const Conteudo = styled.section`
   flex-grow: 1;
 `
 
-function App() {
+const App = () => {
   return (
     <FundoGradient>
       <EstilosGlobais />
