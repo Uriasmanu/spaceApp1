@@ -31,11 +31,14 @@ const Figure = styled.figure`
 
     
 `
+
 const Rodape = styled.footer`
     display: flex;
     justify-content: space-between;
     align-items: center;
 `
+
+
 import heart from '../../../assets/icones/favorito.png'
 import expand from '../../../assets/icones/expandir.png'
 
@@ -50,6 +53,7 @@ const Imagen = ({ foto, expandida = false, aoZoomSolicitado }) => {
                     <h4>{foto.fonte}</h4>
                     <BotaoIcone>
                         <img src={heart} alt="Icone de coracao" />
+
                     </BotaoIcone>
                     
                     {!expandida && <BotaoIcone aria-hidden={expandida} onClick={() => aoZoomSolicitado(foto)}>
