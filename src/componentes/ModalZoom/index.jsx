@@ -30,14 +30,14 @@ const DialogEstilizado = styled.dialog`
     }
 `
 
-const ModalZoom = ({ foto, aoFechar }) => {
+const ModalZoom = ({ foto, aoFechar, aoAlternarFavorito }) => {
     return (
         <>
             {foto && <>
 
                 <Overlay />
                 <DialogEstilizado open={!!foto} onClose={aoFechar} >
-                    <Imagen foto={foto} expandida={true} />
+                    <Imagen foto={foto} expandida={true} aoAlternarFavorito={aoAlternarFavorito} />
 
                     <form method="dialog" >
                         <BotaoIcone formMethod="dialog" >

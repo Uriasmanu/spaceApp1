@@ -37,12 +37,14 @@ const Rodape = styled.footer`
     justify-content: space-between;
     align-items: center;
 `
+import ativo from '../../../assets/icones/favorito-ativo.png'
+import inativo from '../../../assets/icones/favorito.png'
 
-
-import heart from '../../../assets/icones/favorito.png'
 import expand from '../../../assets/icones/expandir.png'
 
-const Imagen = ({ foto, expandida = false, aoZoomSolicitado }) => {
+const Imagen = ({ foto, expandida = false, aoZoomSolicitado,  aoAlternarFavorito }) => {
+
+    const heart = foto.favorita ? ativo :  inativo
 
     return (
         <Figure $expandida={expandida} id={`foto-${foto.id}`} >
@@ -51,7 +53,7 @@ const Imagen = ({ foto, expandida = false, aoZoomSolicitado }) => {
                 <h3>{foto.titulo}</h3>
                 <Rodape>
                     <h4>{foto.fonte}</h4>
-                    <BotaoIcone>
+                    <BotaoIcone onClick={() => aoAlternarFavorito(foto)}>
                         <img src={heart} alt="Icone de coracao" />
 
                     </BotaoIcone>
